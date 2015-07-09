@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" tag="10" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7z-S1-3X2">
@@ -141,7 +142,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tic Tac Toe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62R-za-Hir">
-                                <rect key="frame" x="203" y="55" width="194" height="90"/>
+                                <rect key="frame" x="203" y="40" width="194" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="194" id="QM0-sh-Np4"/>
                                     <constraint firstAttribute="height" constant="36" id="hI4-Wu-iSt"/>
@@ -158,7 +159,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UFM-gb-TD1">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppH-7n-eeh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -180,19 +181,22 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="62R-za-Hir" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="35" id="4uv-ct-l0R"/>
+                            <constraint firstItem="62R-za-Hir" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="4uv-ct-l0R"/>
                             <constraint firstItem="5KY-M6-vO0" firstAttribute="top" secondItem="FBs-C5-fdQ" secondAttribute="top" constant="-6" id="7Sj-YG-gpG"/>
                             <constraint firstItem="Jl3-GZ-cIw" firstAttribute="top" secondItem="5KY-M6-vO0" secondAttribute="top" constant="203" id="Alc-Eq-uaw"/>
                             <constraint firstItem="Wfw-pz-kaT" firstAttribute="top" secondItem="5KY-M6-vO0" secondAttribute="top" constant="105" id="Ase-pI-U5m"/>
                             <constraint firstItem="vdZ-Rk-8Ga" firstAttribute="top" secondItem="5KY-M6-vO0" secondAttribute="top" constant="105" id="EtJ-9J-fnD"/>
                             <constraint firstItem="8sW-Us-ivI" firstAttribute="leading" secondItem="5KY-M6-vO0" secondAttribute="leading" constant="203" id="Ewn-fi-yLn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ppH-7n-eeh" secondAttribute="trailing" constant="-16" id="H6O-Hl-FSh"/>
                             <constraint firstItem="L7z-S1-3X2" firstAttribute="top" secondItem="5KY-M6-vO0" secondAttribute="top" constant="6" id="JPE-zH-Uzt"/>
+                            <constraint firstItem="ppH-7n-eeh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="KRZ-4U-ofv"/>
                             <constraint firstAttribute="centerX" secondItem="5KY-M6-vO0" secondAttribute="centerX" id="KiX-FF-QGW"/>
                             <constraint firstAttribute="centerX" secondItem="UWK-vV-OW1" secondAttribute="centerX" id="Sic-T3-tpF"/>
                             <constraint firstItem="5KY-M6-vO0" firstAttribute="leading" secondItem="FBs-C5-fdQ" secondAttribute="leading" constant="-7" id="VPC-Fw-Bqx"/>
                             <constraint firstItem="EvH-63-16z" firstAttribute="leading" secondItem="5KY-M6-vO0" secondAttribute="leading" constant="7" id="aFv-Vf-fbu"/>
                             <constraint firstItem="cec-KH-nRT" firstAttribute="top" secondItem="5KY-M6-vO0" secondAttribute="top" constant="6" id="cff-SO-pwv"/>
                             <constraint firstItem="Wfw-pz-kaT" firstAttribute="leading" secondItem="5KY-M6-vO0" secondAttribute="leading" constant="105" id="dXX-0v-VZX"/>
+                            <constraint firstItem="ppH-7n-eeh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="eBc-Cu-BZA"/>
                             <constraint firstItem="cec-KH-nRT" firstAttribute="leading" secondItem="5KY-M6-vO0" secondAttribute="leading" constant="203" id="iK8-0q-PDH"/>
                             <constraint firstItem="vdZ-Rk-8Ga" firstAttribute="leading" secondItem="5KY-M6-vO0" secondAttribute="leading" constant="7" id="kwe-tf-Ob8"/>
                             <constraint firstItem="UWK-vV-OW1" firstAttribute="top" secondItem="5KY-M6-vO0" secondAttribute="bottom" constant="40" id="lMf-EV-x9E"/>
@@ -204,12 +208,13 @@
                             <constraint firstItem="EvH-63-16z" firstAttribute="top" secondItem="5KY-M6-vO0" secondAttribute="top" constant="203" id="xV3-wv-5Uo"/>
                             <constraint firstItem="Jl3-GZ-cIw" firstAttribute="leading" secondItem="5KY-M6-vO0" secondAttribute="leading" constant="105" id="xcZ-9j-C0d"/>
                             <constraint firstItem="8sW-Us-ivI" firstAttribute="top" secondItem="5KY-M6-vO0" secondAttribute="top" constant="105" id="xpJ-sb-A85"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ppH-7n-eeh" secondAttribute="bottom" id="zBk-gi-ht5"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="board" destination="5KY-M6-vO0" id="kRe-n2-IUt"/>
                         <outlet property="gameOverLabel" destination="62R-za-Hir" id="wMs-4b-5pi"/>
-                        <outlet property="overlay" destination="UFM-gb-TD1" id="xku-Qk-jJ5"/>
+                        <outlet property="overlay" destination="ppH-7n-eeh" id="c9u-vu-d68"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

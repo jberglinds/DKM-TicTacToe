@@ -21,7 +21,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var tiles = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     var winningCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
     var gameOver = false
-    
+    var timer = NSTimer()
+    var delayed = 0
     
     @IBAction func tilePressed(sender: AnyObject) {
         
@@ -85,21 +86,23 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     func ecuador() {
         audioPlayer?.play()
         
-        let seconds = 12.3 // 12.3 = Sweet spot
-        let delay = seconds * Double(NSEC_PER_SEC)  // nanoseconds per seconds
-        var dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        
-        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-            
-            self.gameOverLabel.text = "ECUADOR!"
-            self.animate()
-            
-        })
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("count"), userInfo: nil, repeats: true)
         
         
     }
+    
+    func count() {
+        delayed++
+        if delayed == 28 {
+            animate()
+            timer.invalidate()
+        }
+    }
 
     @IBAction func resetGame(sender: AnyObject) {
+        timer.invalidate()
+        delayed = 0
+        
         //Reset to default state for all buttons.
         var button : UIButton
         for var i = 1; i < 10; i++ {
@@ -134,6 +137,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func animate() {
+        gameOverLabel.text = "ECUADOR!"
         
         //Animate all DKM-logos randomly.
         UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat, animations: { () -> Void in
