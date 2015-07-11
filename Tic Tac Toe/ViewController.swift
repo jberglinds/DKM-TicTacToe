@@ -67,10 +67,15 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         var error: NSError?
         
-        audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+        } catch let error1 as NSError {
+            error = error1
+            audioPlayer = nil
+        }
         
         if let err = error {
-            println("audioPlayer error \(err.localizedDescription)")
+            print("audioPlayer error \(err.localizedDescription)")
         } else {
             audioPlayer?.delegate = self
             audioPlayer?.prepareToPlay()
@@ -140,7 +145,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         gameOverLabel.text = "ECUADOR!"
         
         //Animate all DKM-logos randomly.
-        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat, animations: { () -> Void in
+        UIView.animateWithDuration(0.5, delay: 0, options: [UIViewAnimationOptions.Autoreverse, UIViewAnimationOptions.Repeat], animations: { () -> Void in
             
             var button : UIButton
             for var i = 1; i < 10; i++ {
@@ -164,7 +169,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
         
         //Animate alpha of overlay to get strobe.
-        UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat, animations: { () -> Void in
+        UIView.animateWithDuration(0.2, delay: 0, options: [UIViewAnimationOptions.Autoreverse, UIViewAnimationOptions.Repeat], animations: { () -> Void in
             
             self.overlay.alpha = 1
             

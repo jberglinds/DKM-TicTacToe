@@ -16,7 +16,7 @@
 		AB179C8E1B49548D00317199 /* svart.png in Resources */ = {isa = PBXBuildFile; fileRef = AB179C8D1B49548D00317199 /* svart.png */; };
 		AB179C901B49549100317199 /* vit.png in Resources */ = {isa = PBXBuildFile; fileRef = AB179C8F1B49549100317199 /* vit.png */; };
 		AB179C931B496D8800317199 /* Ecuador.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB179C921B496D8800317199 /* Ecuador.mp3 */; };
-		ABC74B251B4C5B77001D003B /* asu_pid.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = ABC74B241B4C5B77001D003B /* asu_pid.entitlements */; };
+		AB6E591E1B514E52004B4E56 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB6E591D1B514E52004B4E56 /* Icon-60@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		AB179C8D1B49548D00317199 /* svart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = svart.png; sourceTree = "<group>"; };
 		AB179C8F1B49549100317199 /* vit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vit.png; sourceTree = "<group>"; };
 		AB179C921B496D8800317199 /* Ecuador.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ecuador.mp3; sourceTree = "<group>"; };
-		ABC74B241B4C5B77001D003B /* asu_pid.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = asu_pid.entitlements; sourceTree = "<group>"; };
+		AB6E591D1B514E52004B4E56 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@3x.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-60@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +70,9 @@
 				AB0D05DC1B493E81000E9AB9 /* AppDelegate.swift */,
 				AB0D05DE1B493E81000E9AB9 /* ViewController.swift */,
 				AB0D05E01B493E81000E9AB9 /* Main.storyboard */,
-				ABC74B241B4C5B77001D003B /* asu_pid.entitlements */,
 				AB179C8B1B49548800317199 /* board.png */,
 				AB179C8D1B49548D00317199 /* svart.png */,
+				AB6E591D1B514E52004B4E56 /* Icon-60@3x.png */,
 				AB179C921B496D8800317199 /* Ecuador.mp3 */,
 				AB179C8F1B49549100317199 /* vit.png */,
 				AB0D05E31B493E81000E9AB9 /* Images.xcassets */,
@@ -134,11 +134,14 @@
 		AB0D05CF1B493E81000E9AB9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Jonathan Berglind";
 				TargetAttributes = {
 					AB0D05D61B493E81000E9AB9 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = RVSA2Z4HRJ;
 					};
 				};
 			};
@@ -165,10 +168,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6E591E1B514E52004B4E56 /* Icon-60@3x.png in Resources */,
 				AB179C8C1B49548800317199 /* board.png in Resources */,
 				AB179C931B496D8800317199 /* Ecuador.mp3 in Resources */,
 				AB0D05E21B493E81000E9AB9 /* Main.storyboard in Resources */,
-				ABC74B251B4C5B77001D003B /* asu_pid.entitlements in Resources */,
 				AB179C8E1B49548D00317199 /* svart.png in Resources */,
 				AB179C901B49549100317199 /* vit.png in Resources */,
 				AB0D05E71B493E81000E9AB9 /* LaunchScreen.xib in Resources */,
@@ -193,7 +196,6 @@
 			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
-
 
 /* Begin PBXSourcesBuildPhase section */
 		AB0D05D31B493E81000E9AB9 /* Sources */ = {
@@ -245,11 +247,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: jonathan.berglind@gmail.com (QNEND27G3N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -291,7 +294,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: jonathan.berglind@gmail.com (QNEND27G3N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -317,11 +320,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: jonathan.berglind@gmail.com (QNEND27G3N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Tic Tac Toe/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jberglinds.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -331,11 +337,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: jonathan.berglind@gmail.com (QNEND27G3N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Tic Tac Toe/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jberglinds.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
